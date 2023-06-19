@@ -12,6 +12,7 @@ namespace Examen2.Models
         public int cuartos { get; set; }
         public double precioRenta { get; set; }
 
+        public string nombrehab { get; set; }
 
 
         public virtual void calcularRenta()
@@ -22,7 +23,7 @@ namespace Examen2.Models
 
         public override string ToString()
         {
-            return $"Numero de Habitacion: {numeroHabitacion}\n Piso:{piso}\n Cantidad de cuartos: {cuartos}\n Precio: LPS. {precioRenta}\n";
+            return $"Habitacion tipo:{nombrehab}\n Numero de Habitacion: {numeroHabitacion}\n Piso:{piso}\n Cantidad de cuartos: {cuartos}\n Precio: LPS. {precioRenta}\n";
         }
 
     }

@@ -37,9 +37,9 @@ namespace Examen2.ViewModels
             {
                 if (selection == "cabanias")
                 {
-                    Cabanias cab = new Cabanias(NumeroHabitacion,Piso,Cuartos)
+                    Cabanias cab = new Cabanias(NumeroHabitacion, Piso, Cuartos)
                     {
-                      
+                        nombrehab = "Cabanias"
                     };
                   ObjetoSeleccionado.agregarHabitacion(cab);
                    // listhab.Add(cab);
@@ -48,7 +48,7 @@ namespace Examen2.ViewModels
                 {
                     Vip vip = new Vip(NumeroHabitacion,Piso,Cuartos)
                     {
-
+                        nombrehab = "Vip"
                     };
 
                     ObjetoSeleccionado.agregarHabitacion(vip);
