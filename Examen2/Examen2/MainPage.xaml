@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen2.MainPage"
+             xmlns:local="clr-namespace:Examen2.ViewModels"
+             >
+
+    <ContentPage.BindingContext>
+        <local:viewModelMainPage></local:viewModelMainPage>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#FFD89C</Color>
+            <Color x:Key="SecondaryColor">#85A389</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid BackgroundColor="{StaticResource PrimaryColor}">
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
+            <Image Source="logo.png" HeightRequest="100" HorizontalOptions="CenterAndExpand" Margin="0,0,0,40" />
+            <Label Text="Iniciar Sesión" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" Margin="0,0,0,20" />
+
+        <Entry Text="{Binding CorreoElectronico}"  Placeholder="Correo Electrónico" Keyboard="Email" Margin="0,0,0,10" />
+        <Entry Text="{Binding Contrasenia }"  Placeholder="Contraseña" IsPassword="True" Margin="0,0,0,20" />
+
+            <Button  Command="{Binding autenticar}" Text="Iniciar Sesión"   BackgroundColor="{StaticResource SecondaryColor}" TextColor="White" />
+
+            <Button Command="{Binding navegarCrearUsuario}" Text="Crear Usuario" BackgroundColor="{StaticResource SecondaryColor}" TextColor="White" />
+
+        <Label Text="{Binding ResultadoAuth}" ></Label>
+
+        <Label Text="{Binding U }" ></Label>
+
+    </StackLayout>
+
+    </Grid>
+
+
+</ContentPage>

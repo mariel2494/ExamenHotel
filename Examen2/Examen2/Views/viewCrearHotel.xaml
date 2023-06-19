@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen2.Views.viewCrearHotel"
+             xmlns:local="clr-namespace:Examen2.ViewModels">
+
+
+    <ContentPage.BindingContext>
+        <local:ViewModelCrearHotel></local:ViewModelCrearHotel>
+    </ContentPage.BindingContext>
+    
+        <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#FFD89C</Color>
+            <Color x:Key="SecondaryColor">#85A389</Color>
+            <Color x:Key="textColor">#e0218a</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor}">
+            <StackLayout  VerticalOptions="CenterAndExpand" Padding="30">
+                <Label Text="Crear Hotel" TextColor="{StaticResource textColor}" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" Margin="0,0,0,20" />
+            <Image Source="hotel.png" HeightRequest="100" HorizontalOptions="CenterAndExpand" Margin="0,0,0,40" />
+
+                <Label Text="Nombre Hotel" TextColor="{StaticResource textColor}"></Label>
+            <Entry Text="{Binding Nombre}"  Keyboard="Default" ></Entry>
+                <Label Text="Fecha de fundacion" TextColor="{StaticResource textColor}"></Label>
+            <DatePicker MinimumDate="{Binding FechaMin}" Date="{Binding FechaFundacion}"></DatePicker>
+                <Label Text="Ubicacion" TextColor="{StaticResource textColor}"></Label>
+            <Entry Text="{Binding Ubicacion}"  Keyboard="Default" ></Entry>
+
+                <Button Command="{Binding crearHotel}" Text="Crear Hotel"  BackgroundColor="{StaticResource SecondaryColor}" TextColor="White"></Button>
+
+
+        </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

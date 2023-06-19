@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen2.Views.viewCrearHabitacion"
+             xmlns:local="clr-namespace:Examen2.ViewModels">
+
+    <ContentPage.BindingContext>
+        <local:viewModelCrearHabitaciones></local:viewModelCrearHabitaciones>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#FFD89C</Color>
+            <Color x:Key="SecondaryColor">#85A389</Color>
+            <Color x:Key="textColor">#e0218a</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor}">
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
+            <Label Text="Crear Habitaciones" TextColor="{StaticResource textColor}" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" Margin="0,0,0,20" />
+            <Image Source="llavero.png" HeightRequest="100" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" />
+            <Label Text="Hotel" TextColor="{StaticResource textColor}"></Label>
+            <Picker ItemsSource="{Binding listaH }"  SelectedItem="{Binding ObjetoSeleccionado}" ></Picker>
+            <Label Text="Numero de habitacion" TextColor="{StaticResource textColor}"></Label>
+            <Entry Text="{Binding NumeroHabitacion}"  Keyboard="Numeric" ></Entry>
+            <Label Text="Piso" TextColor="{StaticResource textColor}"></Label>
+            <Entry Text="{Binding Piso}"  Keyboard="Numeric" ></Entry>
+            <Label Text="Cantidad de Cuartos" TextColor="{StaticResource textColor}"></Label>
+            <Entry Text="{Binding Cuartos}"  Keyboard="Numeric" ></Entry>
+            <Label Text="Tipo de habitacion" TextColor="{StaticResource textColor}"></Label>
+
+            <StackLayout RadioButtonGroup.GroupName="tipo"
+                         RadioButtonGroup.SelectedValue="{Binding Selection}">
+                <RadioButton Content="VIP" Value="vip" />
+                <RadioButton Content="Cabanias" Value="cabanias"/>
+            </StackLayout>
+
+
+
+            <Button Command="{Binding crearHabitacion}" Text="Crear Habitacion" BackgroundColor="{StaticResource SecondaryColor}" TextColor="White"></Button>
+        </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen2.Views.viewMenu"
+             xmlns:local="clr-namespace:Examen2.ViewModels">
+    <ContentPage.BindingContext >
+        <local:viewModelMenu></local:viewModelMenu>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#FFD89C</Color>
+            <Color x:Key="SecondaryColor">#85A389</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor}">
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
+            <Label Text="Menu" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" Margin="0,0,0,20" />
+            <CollectionView SelectionMode="Single"
+                            SelectedItem="{Binding ObjetoSeleccionado}"
+                            ItemsSource="{Binding lista}"
+                            SelectionChangedCommand="{Binding redirigirCategoria}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="25" Margin="1" >
+
+                            <Grid.RowDefinitions  >
+                                <RowDefinition Height="150"  ></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0" Grid.Row="0" Source="{Binding urlcategoria}" Aspect="AspectFill" />
+                            <Label Grid.Column="1" Grid.Row="0"  Text="{Binding nombre} " HorizontalOptions="CenterAndExpand" FontSize="24"></Label>
+
+                        </Grid>
+
+                    </DataTemplate>
+                                        
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+            
+            
+        </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
