@@ -9,14 +9,24 @@
         <local:viewModelCreacionUsuarios></local:viewModelCreacionUsuarios>
     </ContentPage.BindingContext>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PrimaryColor">#FFD89C</Color>
+            <Color x:Key="SecondaryColor">#85A389</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor}">
         <StackLayout  VerticalOptions="CenterAndExpand" Padding="30">
 
             <Entry  Text="{Binding CorreoElectronico}" Placeholder="Correo Electrónico" Keyboard="Email" Margin="0,0,0,10" />
             <Entry  Text="{Binding Contrasenia}" Placeholder="Contraseña" IsPassword="True" Margin="0,0,0,20" />
 
-            <Button Command="{Binding crearUsuario }" Text="Crear" BackgroundColor="#2196F3" TextColor="White" />
+                <Button Command="{Binding crearUsuario }" Text="Crear" BackgroundColor="{StaticResource SecondaryColor}" TextColor="White" />
 
         </StackLayout>
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>
