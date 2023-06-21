@@ -29,7 +29,7 @@ namespace Examen2.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Sin archivo por cargar de Personas");
+                Console.WriteLine("Sin archivo por cargar de Hoteles");
 
             }
 

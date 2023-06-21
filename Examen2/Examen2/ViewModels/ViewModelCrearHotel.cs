@@ -29,7 +29,7 @@ namespace Examen2.ViewModels
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Sin archivo por cargar de Personas");
+                Console.WriteLine("Sin archivo por cargar de Hoteles");
 
             }
 
@@ -46,7 +46,7 @@ namespace Examen2.ViewModels
                 };
 
                 listaH.Add(h);
-                // Rutina para Serializar las Listas de Habitaciones
+                // Rutina para Serializar las Listas de Hoteles
                 BinaryFormatter formateador = new BinaryFormatter();
                 MemoryStream memoria = new MemoryStream();
                 formateador.Serialize(memoria, listaH);
